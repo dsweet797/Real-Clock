@@ -20,6 +20,11 @@ public class RealClockPanel extends JPanel {
 		
 		g.setColor(Color.black);
 		g.drawRect(xCenter - 200, yCenter - 125, 400, 250);
+
+		
+		RealClock time;
+		time = new RealClock();
+		
 ///		g.drawString(null, xCenter - 100, yCenter - 75);
 	
 }

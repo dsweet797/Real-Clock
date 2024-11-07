@@ -4,13 +4,13 @@ package realpackage;
 
 public class RealClock {
 	
-	float TimeMillis = System.currentTimeMillis();
+	double TimeMillis = System.currentTimeMillis();
 
-	float TimeSecs = TimeMillis/1000;
-	float TimeMins = TimeSecs/60;
-	float TimeHour = TimeMins/60;
+	double TimeSecs = TimeMillis/1000;
+	double TimeMins = TimeSecs/60;
+	double TimeHour = TimeMins/60;
 	
-	String base;
+	String base = C;
 	
 	public String hour() {
 

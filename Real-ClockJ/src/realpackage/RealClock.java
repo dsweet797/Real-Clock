@@ -1,5 +1,7 @@
 package realpackage;
 
+import java.util.*;
+
 ///TimeZone TimeZ = TimeZone.getTimeZone("America/Los_Angeles");
 
 public class RealClock {
@@ -9,26 +11,24 @@ public class RealClock {
 	double TimeSecs = TimeMillis/1000;
 	double TimeMins = TimeSecs/60;
 	double TimeHour = TimeMins/60;
-	
-	String base = C;
-	
+
 	public String hour() {
 
-		String hour = String.format(base, TimeHour);
+		String hour = toString();
 		return hour;
 	
 	}
 	
 	public String min() {
 		
-		String minute = String.format(base, TimeMins);
+		String minute = toString();
 		return minute;
 		
 	}
 	
 	public String sec() {
 		
-		String second = String.format(base, TimeSecs);
+		String second = toString();
 		return second;
 		
 	}

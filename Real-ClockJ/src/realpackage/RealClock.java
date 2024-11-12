@@ -6,30 +6,31 @@ import java.util.*;
 
 public class RealClock {
 	
-	double TimeMillis = System.currentTimeMillis();
+	long TimeMillis = System.currentTimeMillis();
 
-	double TimeSecs = TimeMillis/1000;
-	double TimeMins = TimeSecs/60;
-	double TimeHour = TimeMins/60;
+	long TimeSecs = TimeMillis/1000;
+	long TimeMins = TimeSecs/60;
+	long TimeHour = TimeMins/60;
+	
+	String hour = TimeHour+"";
+	String mins = TimeMins+"";
+	String secs = TimeSecs+"";
 
 	public String hour() {
 
-		String hour = toString();
 		return hour;
 	
 	}
 	
 	public String min() {
 		
-		String minute = toString();
-		return minute;
+		return mins;
 		
 	}
 	
 	public String sec() {
 		
-		String second = toString();
-		return second;
+		return secs;
 		
 	}
 }

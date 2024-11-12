@@ -27,7 +27,7 @@ public class RealClockPanel extends JPanel {
 		
 		String phour;
 		phour = time.hour();
-		g.drawString(phour, xCenter, yCenter);
+		g.drawString(phour, xCenter-10, yCenter+10);
 		
 ///		g.drawString(null, xCenter - 100, yCenter - 75);
 	

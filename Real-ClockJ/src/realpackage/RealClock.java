@@ -1,5 +1,6 @@
 package realpackage;
 
+import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.Timer;
 
@@ -12,10 +13,7 @@ public class RealClock {
 	String secs;
 	
 	public RealClock() {
-		
-	Timer tick;
-	
-	
+
 	long timemillis = System.currentTimeMillis();
 
 	long elapsedmillis = System.currentTimeMillis() - timemillis;

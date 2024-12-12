@@ -12,38 +12,32 @@ public class RealClock {
 	String mins;
 	String secs;
 	
-	public RealClock() {
+	int timesecs;
+	int timemins;
+	int timehour;
 
-	long timemillis = System.currentTimeMillis();
-
-	long elapsedmillis = System.currentTimeMillis() - timemillis;
-	long elapsedsecs = elapsedmillis / 1000;
-	long timesecs = elapsedsecs % 60;
-	long elapsedmins = elapsedsecs / 60;
-	long timemins = elapsedmins % 60;
-	long elapsedhour = elapsedmins / 60;
-	long timehour = elapsedhour % 60;
-	
-	hour = timehour+"";
-	mins = timemins+"";
-	secs = timesecs+"";
-	
-	}
+	Calendar date = Calendar.getInstance();
 	
 	public String hour() {
 
+		timehour = date.get(Calendar.HOUR);
+		hour = "" + timehour;
 		return hour;
 	
 	}
 	
 	public String min() {
 		
+		timemins = date.get(Calendar.MINUTE);
+		mins = "" + timemins;
 		return mins;
 		
 	}
 	
 	public String sec() {
 		
+		timesecs = date.get(Calendar.SECOND);
+		secs = "" + timesecs;
 		return secs;
 		
 	}

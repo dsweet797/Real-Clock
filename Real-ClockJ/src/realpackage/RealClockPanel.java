@@ -3,14 +3,14 @@ package realpackage;
 import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.event.*;
-import javax.swing.Timer;
+import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class RealClockPanel extends JPanel {
 	
-	private RealClockPanel timeP;
-	
-	public void paintComponent(Graphics g) {
+	public void drawTime(Graphics g) {
 		super.paintComponent(g);
 		setBackground(Color.white);
 		
@@ -22,24 +22,26 @@ public class RealClockPanel extends JPanel {
 		
 		g.setColor(Color.black);
 		g.drawRect(xCenter - 200, yCenter - 125, 400, 250);
-		
+			
 		RealClock time;
 		time = new RealClock();
-		
+			
 		String phour;
 		phour = time.hour();
-		g.drawString(phour, xCenter-10, yCenter+20);
-		
+			
 		String pmin;
 		pmin = time.min();
-		g.drawString(pmin, xCenter-10, yCenter+10);
-		
+			
 		String psec;
 		psec = time.sec();
-		g.drawString(psec, xCenter-10, yCenter);
-		
-///		g.drawString(null, xCenter - 100, yCenter - 75);
-	}
+			
+		g.drawString(phour + ":" + pmin + ":" + psec, xCenter-10, yCenter+5);	
+		}
+	
+	//public static void main1(String[] args) {
+	//    final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+	//    executorService.scheduleAtFixedRate(RealClockPanel::drawTime, 0, 1, TimeUnit.SECONDS);
+	//}
 
 	public static void main(String[] args) {
 		JFrame window = new JFrame("Time Display");

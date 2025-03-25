@@ -8,25 +8,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-@SuppressWarnings({ "serial", "unused" })
 public class RealClockPanel extends JPanel {
 	
-	private static RealClockPanel timeP;
-	
-	public static void main(String[] args) {
-		JFrame window = new JFrame("Time Display");
-		window.setBounds(0, 0, 800, 600);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		timeP = new RealClockPanel();
-		Container c = window.getContentPane();
-		c.add(timeP);
-		window.setVisible(true);
-		window.setResizable(false);
-	}
-
 	public void drawTime(Graphics g) {
 		super.paintComponent(g);
-		setBackground(Color.GREEN);
+		setBackground(Color.white);
 		
 		int xWidth = getWidth();
 		int yHeight = getHeight();
@@ -50,11 +36,22 @@ public class RealClockPanel extends JPanel {
 		psec = time.sec();
 			
 		g.drawString(phour + ":" + pmin + ":" + psec, xCenter-10, yCenter+5);	
-	}
+		}
 	
-//	public static void main1(String[] args) {
-//	    final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-//	    executorService.scheduleAtFixedRate(RealClockPanel::drawTime, 0, 1, TimeUnit.SECONDS);
-//	}
+	//public static void main1(String[] args) {
+	//    final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+	//    executorService.scheduleAtFixedRate(RealClockPanel::drawTime, 0, 1, TimeUnit.SECONDS);
+	//}
+
+	public static void main(String[] args) {
+		JFrame window = new JFrame("Time Display");
+		window.setBounds(0, 0, 800, 600);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		RealClockPanel timeP = new RealClockPanel();
+		Container c = window.getContentPane();
+		c.add(timeP);
+		window.setVisible(true);
+		window.setResizable(false);
+	}
 	
 }
